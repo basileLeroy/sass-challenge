@@ -1,3 +1,16 @@
+/* Var-section and mixing */
+
+$title-color: #6b8eff;
+$standard-padding: 16px;
+
+@mixin Shadow {
+    -webkit-box-shadow: 10px 10px 19px -4px rgba(255, 255, 255, 0.75);
+    -moz-box-shadow: 10px 10px 19px -4px rgba(255, 255, 255, 0.75);
+    box-shadow: 10px 10px 19px -4px rgba(255, 255, 255, 0.75);
+}
+
+/* scss language */
+
 body {
     font: 100% "Space Mono", monospace;
     color: #2748b3;
@@ -29,10 +42,7 @@ body {
             flex-grow: 1;
             flex-basis: 45%;
             border: 1px silver solid;
-            -webkit-box-shadow: 10px 10px 19px -4px rgba(255, 255, 255, 0.75);
-            -moz-box-shadow: 10px 10px 19px -4px rgba(255, 255, 255, 0.75);
-            box-shadow: 10px 10px 19px -4px rgba(255, 255, 255, 0.75);
-            padding: 16px;
+            @include Shadow();
             margin: 16px;
             clear: both;
             overflow: auto;
@@ -55,7 +65,7 @@ body {
             margin-bottom: 1.6em;
             max-width: 100%;
             overflow: auto;
-            padding: 16px;
+            padding: $standard-padding;
             display: block;
             white-space: pre-wrap;
 
@@ -71,52 +81,43 @@ body {
         }
         
         h1 {
-            color: #6b8eff;
+            color: $title-color;
             text-align: center;
         }
 
         h2 {
-            color: #6b8eff;
+            color: $title-color;
         }
 
         h6 {
-            color: #6b8eff;
+            color: $title-color;
             text-align: center;
             font-size: 2em;
-            padding: 32px;
+            padding: $standard-padding*2;
             margin-bottom: 0px;
         }
     }
         
     .message {
         border: 1px solid #ccc;
-        padding: 16px;
+        padding: $standard-padding;
         margin: 16px;
         color: #2748b3;
         background-color: #000;
     }
 
     .succes {
-        border: 1px solid #ccc;
-        padding: 16px;
-        margin: 16px;
-        color: #2748b3;
+        @extend .message;
         background-color: green;
     }
 
     .error {
-        border: 1px solid #ccc;
-        padding: 16px;
-        margin: 16px;
-        color: #2748b3;
+        @extend .message;
         background-color: red;
     }
 
     .warning {
-        border: 1px solid #ccc;
-        padding: 16px;
-        margin: 16px;
-        color: #2748b3;
+        @extend .message;
         background-color: orange;
     }
     

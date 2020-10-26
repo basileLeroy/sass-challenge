@@ -1,3 +1,5 @@
+/* Var-section and mixing */
+/* scss language */
 body {
   font: 100% "Space Mono", monospace;
   color: #2748b3;
@@ -27,7 +29,6 @@ body article section {
   border: 1px silver solid;
   -webkit-box-shadow: 10px 10px 19px -4px rgba(255, 255, 255, 0.75);
   box-shadow: 10px 10px 19px -4px rgba(255, 255, 255, 0.75);
-  padding: 16px;
   margin: 16px;
   clear: both;
   overflow: auto;
@@ -85,7 +86,7 @@ body article h6 {
   margin-bottom: 0px;
 }
 
-body .message {
+body .message, body .succes, body .error, body .warning {
   border: 1px solid #ccc;
   padding: 16px;
   margin: 16px;
@@ -94,26 +95,14 @@ body .message {
 }
 
 body .succes {
-  border: 1px solid #ccc;
-  padding: 16px;
-  margin: 16px;
-  color: #2748b3;
   background-color: green;
 }
 
 body .error {
-  border: 1px solid #ccc;
-  padding: 16px;
-  margin: 16px;
-  color: #2748b3;
   background-color: red;
 }
 
 body .warning {
-  border: 1px solid #ccc;
-  padding: 16px;
-  margin: 16px;
-  color: #2748b3;
   background-color: orange;
 }
 /*# sourceMappingURL=style.css.map */
