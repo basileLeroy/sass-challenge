@@ -1,0 +1,15 @@
+/* Var-section and mixing */
+
+$title-color: #6b8eff;
+$standard-padding: 16px;
+$color-name: null;
+
+@mixin Shadow {
+    -webkit-box-shadow: 10px 10px 19px -4px rgba(255, 255, 255, 0.75);
+    -moz-box-shadow: 10px 10px 19px -4px rgba(255, 255, 255, 0.75);
+    box-shadow: 10px 10px 19px -4px rgba(255, 255, 255, 0.75);
+}
+
+@mixin Button($color-name) {
+    color: $color-name;
+    }

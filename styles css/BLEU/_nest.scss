@@ -1,19 +1,9 @@
-/* Var-section and mixing */
 
-$title-color: #6b8eff;
-$standard-padding: 16px;
-
-@mixin Shadow {
-    -webkit-box-shadow: 10px 10px 19px -4px rgba(255, 255, 255, 0.75);
-    -moz-box-shadow: 10px 10px 19px -4px rgba(255, 255, 255, 0.75);
-    box-shadow: 10px 10px 19px -4px rgba(255, 255, 255, 0.75);
-}
-
-/* scss language */
 
 body {
     font: 100% "Space Mono", monospace;
-    color: #2748b3;
+    @include Button(blue);
+        color: $color-name;
     margin: 0px;
     padding: 0px;
     background-color: #000;
@@ -29,10 +19,63 @@ body {
         rgba(255, 255, 255, 0.1) 2px,
         transparent 30px
       );
-    background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
-    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
-    background-attachment: fixed;
+        background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+        background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+        background-attachment: fixed;
 
+    button {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        text-align: center;
+        padding: $standard-padding;
+        margin: 20px 5px;
+        
+        .red {
+            display: inline-block;
+            color: white;
+            background-color: red;
+            background-size: contain;
+            background-repeat: no-repeat;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 3%;
+            margin-bottom: 3%;
+                :visited, :link {
+                    color: red;
+                }
+                :active, :hover {
+                    color: red;
+                }
+        }
+
+        .bleu {
+            display: inline-block;
+            color: white;
+            background-color: blue;
+            background-size: contain;
+            background-repeat: no-repeat;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 3%;
+            margin-bottom: 3%;
+            :visited, :link {
+                @include Button(blue);
+                color: $color-name;
+            }
+            :active, :hover {
+                color: blue
+            }
+        
+            
+        }
+    }
 
     article {
         display: flex;
@@ -81,16 +124,16 @@ body {
         }
         
         h1 {
-            color: $title-color;
+            color: $color-name;
             text-align: center;
         }
 
         h2 {
-            color: $title-color;
+            color: $color-name;
         }
 
         h6 {
-            color: $title-color;
+            color: $color-name;
             text-align: center;
             font-size: 2em;
             padding: $standard-padding*2;
